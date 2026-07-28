@@ -9,72 +9,71 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
         body { background-color: #faf9f6; color: #333; font-family: 'Montserrat', sans-serif; }
         .font-serif { font-family: 'Playfair Display', serif; }
+        .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 4rem 2rem; border-bottom: 1px solid #e5e7eb; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
         .fade-in.active { opacity: 1; transform: translateY(0); }
-        .section-padding { padding: 80px 20px; }
-        .icon-float { animation: float 3s ease-in-out infinite; }
+        .float-icon { animation: float 3s ease-in-out infinite; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
     </style>
 </head>
-<body>
+<body class="text-stone-900">
 
-    <!-- PORTADA -->
-    <section class="h-screen relative flex flex-col justify-center items-center text-center px-6 text-white">
-        <img src="https://i.imgur.com/p7SYHbR.jpeg" class="absolute inset-0 w-full h-full object-cover brightness-50" onerror="this.src='https://placehold.co/1200x800/292524/ffffff?text=Nuestra+Foto'">
-        <div class="relative z-10">
-            <h1 class="text-6xl md:text-8xl font-serif mb-6">Lu y Manu</h1>
-            <p class="text-xl tracking-[0.3em] uppercase">03.10.2026</p>
+    <!-- SECCIÓN 1: PORTADA -->
+    <section class="section p-0">
+        <div class="relative w-full h-screen overflow-hidden">
+            <img src="https://i.imgur.com/p7SYHbR.jpeg" class="w-full h-full object-cover object-center" onerror="this.src='https://placehold.co/1200x1600/292524/ffffff?text=Nuestra+Foto'">
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white p-6 text-center">
+                <h1 class="text-6xl md:text-8xl font-serif mb-6">Lu y Manu</h1>
+                <p class="text-xl tracking-[0.3em] uppercase">03.10.2026</p>
+            </div>
         </div>
     </section>
 
-    <!-- INTRO Y CONTADOR -->
-    <section class="section-padding fade-in text-center">
-        <h2 class="text-3xl font-serif mb-8 italic">Ella dijo que sí, ahora faltan ustedes</h2>
-        <div class="mb-12">
-            <img src="https://i.imgur.com/PHUPe7Z.jpeg" class="w-full max-w-sm mx-auto rounded-2xl shadow-lg" onerror="this.src='https://placehold.co/600x800/d6d3d1/ffffff?text=Nuestra+Foto+2'">
+    <!-- SECCIÓN 2: INVITE & CONTADOR -->
+    <section class="section fade-in">
+        <h2 class="text-3xl md:text-4xl font-serif mb-8 text-center">Ella dijo que sí,<br>ahora faltan ustedes</h2>
+        <div class="w-full max-w-sm mb-12">
+            <img src="https://i.imgur.com/PHUPe7Z.jpeg" class="rounded-2xl shadow-xl w-full" onerror="this.src='https://placehold.co/600x600/d6d3d1/ffffff?text=Nuestra+Foto+2'">
         </div>
-        <div id="countdown" class="grid grid-cols-4 gap-4 max-w-sm mx-auto text-center">
-            <div class="p-2"><span id="days" class="text-3xl font-bold block font-serif">00</span><span class="text-[10px] uppercase tracking-widest">Días</span></div>
-            <div class="p-2"><span id="hours" class="text-3xl font-bold block font-serif">00</span><span class="text-[10px] uppercase tracking-widest">Horas</span></div>
-            <div class="p-2"><span id="minutes" class="text-3xl font-bold block font-serif">00</span><span class="text-[10px] uppercase tracking-widest">Min</span></div>
-            <div class="p-2"><span id="seconds" class="text-3xl font-bold block font-serif">00</span><span class="text-[10px] uppercase tracking-widest">Seg</span></div>
+        <div id="countdown" class="grid grid-cols-4 gap-4 text-center">
+            <div class="bg-stone-100 p-4 rounded-lg"><span id="days" class="text-3xl font-bold block">00</span><span class="text-[10px] uppercase">Días</span></div>
+            <div class="bg-stone-100 p-4 rounded-lg"><span id="hours" class="text-3xl font-bold block">00</span><span class="text-[10px] uppercase">Horas</span></div>
+            <div class="bg-stone-100 p-4 rounded-lg"><span id="minutes" class="text-3xl font-bold block">00</span><span class="text-[10px] uppercase">Min</span></div>
+            <div class="bg-stone-100 p-4 rounded-lg"><span id="seconds" class="text-3xl font-bold block">00</span><span class="text-[10px] uppercase">Seg</span></div>
         </div>
     </section>
 
-    <!-- DETALLES Y PUNTUALIDAD -->
-    <section class="section-padding fade-in bg-stone-900 text-stone-100 text-center">
-        <div class="icon-float mb-6 opacity-80">
-            <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        </div>
-        <h2 class="text-3xl font-serif mb-8 italic">El Gran Día</h2>
-        <div class="space-y-6 text-lg">
+    <!-- SECCIÓN 3: DETALLES -->
+    <section class="section fade-in bg-stone-900 text-stone-100">
+        <div class="float-icon mb-6"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h2 class="text-3xl font-serif mb-8 text-white">El Gran Día</h2>
+        <div class="space-y-6 text-center text-lg">
             <p><strong>Dress Code:</strong> Formal</p>
             <p><strong>Fecha:</strong> 3 de Octubre, 2026</p>
-            <div class="my-10">
-                <p class="text-5xl font-bold font-serif italic">17:00 hs</p>
-                <p class="mt-4 text-stone-400 uppercase tracking-[0.2em] text-xs font-bold">¡SE RUEGA PUNTUALIDAD POR EL CIVIL!</p>
+            <div class="my-8">
+                <p class="text-5xl font-bold font-serif text-white">17:00 hs</p>
+                <p class="mt-4 text-stone-400 uppercase tracking-widest text-xs font-bold">¡SE RUEGA PUNTUALIDAD POR EL CIVIL!</p>
             </div>
-            <a href="https://www.google.com/maps/place/La+Guadalupe/data=!4m2!3m1!1s0x0:0x588836c1de0b0390?sa=X&ved=1t:2428&ictx=111" target="_blank" class="inline-block border border-stone-500 px-8 py-3 hover:bg-stone-700 transition uppercase tracking-widest text-sm">Ver ubicación</a>
+            <a href="https://www.google.com/maps/place/La+Guadalupe/data=!4m2!3m1!1s0x0:0x588836c1de0b0390?sa=X&ved=1t:2428&ictx=111" target="_blank" class="inline-block border border-white px-8 py-3 rounded-full hover:bg-white hover:text-stone-900 transition font-semibold">Ver ubicación</a>
         </div>
     </section>
 
-    <!-- REGALOS -->
-    <section class="section-padding fade-in text-center">
-        <div class="icon-float mb-6 opacity-80">
-            <svg class="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"></rect><path d="M12 8v12"></path><path d="M3 12h18"></path><path d="M9 8V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"></path></svg>
-        </div>
-        <h2 class="text-2xl font-serif mb-2 italic">¿Nos quieren hacer un regalo?</h2>
-        <p class="mb-8 text-stone-600 max-w-sm mx-auto text-sm italic">No es obligación, pero si desean hacerlo, esto nos ayuda mucho:</p>
-        <div class="bg-stone-100 p-8 border border-stone-200 text-center w-full max-w-sm mx-auto">
+    <!-- SECCIÓN 4: REGALOS -->
+    <section class="section fade-in">
+        <div class="float-icon mb-6"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M12 20V12m0 0H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4m0 8h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4M12 12h4m-8 0h4"/></svg></div>
+        <h2 class="text-3xl font-serif mb-6 text-stone-800">¿Nos quieren hacer un regalo?</h2>
+        <p class="mb-8 text-stone-600 max-w-sm text-center italic">No es obligación, pero si desean hacerlo, esto nos ayuda mucho:</p>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 text-center w-full max-w-sm">
             <p class="font-bold text-lg mb-2">Lucía María Born</p>
-            <p class="font-mono p-3 text-stone-700 tracking-wider">CBU: 0720218888000002078768</p>
+            <p class="font-mono bg-stone-100 p-3 rounded text-stone-700">CBU: 0720218888000002078768</p>
         </div>
     </section>
 
-    <!-- CONFIRMACIÓN -->
-    <section class="section-padding fade-in text-center bg-stone-100">
-        <h2 class="text-3xl font-serif mb-12 italic">¿Nos acompañan?</h2>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg0AQEgC9PyS5OFJTaB7Wl_uZdC2fYLgTiPDGyXxGy8GR3Jw/viewform" target="_blank" class="bg-stone-900 text-white px-12 py-5 text-sm uppercase tracking-[0.2em] hover:bg-stone-700 transition shadow-xl">
+    <!-- SECCIÓN 5: CONFIRMACIÓN -->
+    <section class="section fade-in bg-stone-100">
+        <h2 class="text-3xl font-serif mb-8">¿Nos acompañan?</h2>
+        <p class="mb-10 text-stone-600">Por favor, confirmen su asistencia.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg0AQEgC9PyS5OFJTaB7Wl_uZdC2fYLgTiPDGyXxGy8GR3Jw/viewform" target="_blank" class="bg-stone-900 text-white px-12 py-5 rounded-full text-lg hover:bg-stone-700 transition shadow-xl uppercase tracking-widest font-semibold">
             Confirmar asistencia
         </a>
     </section>
